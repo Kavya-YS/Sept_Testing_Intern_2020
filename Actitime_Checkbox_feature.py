@@ -45,8 +45,8 @@ time.sleep(1)
 checkbox = browser.find_element_by_id("keepLoggedInCheckBox")
 checkbox.click()
 
-#Locate the Login button using "LinkText" locator
-button= browser.find_element_by_link_text("Login")
+#Locate the Login button using "Xpath" locator with attribute "id"
+button= browser.find_element_by_xpath("//a[@id='loginButton']")
 button.click()
 time.sleep(10)
 
