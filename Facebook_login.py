@@ -26,21 +26,21 @@ else:
     print("Failed to derive title")
 time.sleep(2)
 
-#Locate the Username field using Xpath locator with attribute "id"
+#Locate the Username field using "Xpath" locator with attribute "id"
 Username= browser.find_element_by_xpath("//input[@name= 'username']")
 
 #Insert data into the Username field
 Username.send_keys('admin')
 time.sleep(2)
 
-#Locate the Password field using Xpath locator with attribute "class"
+#Locate the Password field using "Xpath" locator with attribute "class"
 Password= browser.find_element_by_xpath("//input[@class= 'textField pwdfield']")
 
 #Insert data into the Password field
 Password.send_keys('manager')
 time.sleep(1)
 
-#Locate the Login button using LinkText locator
+#Locate the Login button using "LinkText" locator
 button= browser.find_element_by_link_text("Login")
 button.click()
 time.sleep(10)

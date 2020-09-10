@@ -22,19 +22,19 @@ if(driver.title=="Qxf2 Services: Selenium training main"):
 else:
     print("failed to launch the Qxf2 training tutorial")
 
-#Locate the name field using Xpath locator with "id" attribute
+#Locate the name field using "Xpath" locator with "id" attribute
 name = driver.find_element_by_xpath("//input[@id='name']")
 
 #Insert data into the name field
 name.send_keys('Kavya_YS')
 
-#Locate the email field using Xpath locator with "Type" attribute
+#Locate the email field using "Xpath" locator with "Type" attribute
 email= driver.find_element_by_xpath("//input[@type='email']")
 
 #Insert data into the email field
 email.send_keys('kavya.suryaprakash@qxf2.com')
 
-#Locate the name field using Id locator
+#Locate the name field using "Id" locator
 Phone= driver.find_element_by_id('phone')
 
 #Insert data into the Phone field
