@@ -4,7 +4,8 @@ Program to Login to the Actitime webpage successfully
 Scope:
 1. Launch the Chrome browser
 2. Navigate to Actitime Login page
-3. Fill the Text fields Username, Password with the data respectively and click on the Login button
+3. Fill the Text fields Username, Password with the data respectively
+    click the "Keep me logged in" checkbox and click on the Login button
 4. Actitime Home Page to be loaded successfully
 5. Quit the browser
 """
