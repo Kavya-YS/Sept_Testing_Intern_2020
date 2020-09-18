@@ -17,7 +17,7 @@ browser= webdriver.Chrome()
 browser.get("http://weathershopper.pythonanywhere.com/")
 
 #Get the title of the page
-if(browser.title=="Current Temperature"):
+if browser.title=="Current Temperature":
     print("Tittle of the home page is 'Current Temperature'")
 else: 
     print("Unable to get title")
@@ -36,14 +36,14 @@ current_temperature=int(dynamic_temperature[0])
 if(current_temperature)<=19:
     buy_moisturizers= browser.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy moisturizers']").click()
     time.sleep(2)
-    if(browser.title=="The Best Moisturizers in the World!"):
+    if browser.title=="The Best Moisturizers in the World!":
         print("The Best Moisturizers in the World!")
     else: 
         print("Unable to get Moisturizer page title")
-elif(current_temperature>=34):
+elif current_temperature>=34:
     buy_sunscreens= browser.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy sunscreens']").click()
     time.sleep(2)
-    if(browser.title=="The Best Sunscreens in the World!"):
+    if browser.title=="The Best Sunscreens in the World!":
         print("The Best Sunscreens in the World!")
     else: 
         print("Unable to get title")
