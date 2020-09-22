@@ -25,32 +25,46 @@ if browser.title=="The Best Moisturizers in the World!":
 moisturizers= browser.find_elements_by_xpath("//div[contains(@class, 'text-center col-4')]")
 #print("Moisturizers: ", moisturizers)
 for each_moisturizer in moisturizers:
-    #print(each_moisturizer.text)
+    print(each_moisturizer.text)
     time.sleep(2)
     moisturizer_details= each_moisturizer.text
     split_moisturizer_details= moisturizer_details.split('\n')
-    #print("Split data is:", split_moisturizer_details)
+    print("Split data is:", split_moisturizer_details)
+    
     time.sleep(3)
-    item_name=split_moisturizer_details[0]
-    #print("product_name:", item_name)       
-    item_price=split_moisturizer_details[1]
-    #print("item_price:", item_price)
+
+    #listing all the product names
+    product_name=split_moisturizer_details[0]
+    print("product_name:", product_name)
+    print(type(product_name))
+
+    # Listing all the product price    
+    product_price=split_moisturizer_details[1]
+    #product_price= product_price.split("Price: Rs. ")[-1] #[-1] points the last index in the list
     #print(type(item_price))
-    product_price= re.findall('\d+', item_price)
-    #product_price= [int(each_price) for each_price in product_price]
-    print("product_price are:", *product_price)
-    print(type(product_price))
+    product_price= re.findall('\d+', product_price)
+    product_price= [int(each_price) for each_price in product_price]
+    print("product_price:", product_price)
+    print(type(product_name))
     time.sleep(2)
-    product_name= item_name.split(',')
-    #print("product_name is:", *product_name)   
-    zipped_product_details= zip(product_name, product_price)
-    #print("zipped_product_details:", zipped_product_details)
-    product_details=list(zipped_product_details)
-    print("product_details is:", *product_details)
+
+    # Mapping the product name from product_name list with its respective price in product_price list
+    product_details= map(list, zip(product_name, product_price))
+    #print("zipped_product_details:", *zipped_product_details)
+    #product_details=list(zipped_product_details)
+    #print("product_details is:", end="")
+    print("product_details:", list(product_details))
     time.sleep(3)
-    """min_price= []
-    for price in product_details:
-        if min_price < price:
-            min_price = price
-            print(min_price)"""
-browser.quit()
+
+    # Iterating through the product_price to find the min-price of moisturizers
+    """
+    min_price= 0
+    product_price=int(product_price)
+    print("converted product_price:", product_price)
+    print(type(product_price))
+    for each_price in product_price:
+        if min_price < each_price:
+            print(type(each_price))
+            min_price = each_price
+            print(min_price)
+browser.quit()"""
