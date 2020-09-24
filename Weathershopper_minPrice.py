@@ -30,12 +30,11 @@ product_price_list=[]
 
 for each_moisturizer in moisturizers:
     print(each_moisturizer.text)
-    time.sleep(2)
+    #time.sleep(2)
     moisturizer_details= each_moisturizer.text
     split_moisturizer_details= moisturizer_details.split('\n')
     print("Split data is:", split_moisturizer_details)
     print(type(split_moisturizer_details))
-    
     time.sleep(3)
 
     product_name=split_moisturizer_details[0]
@@ -52,26 +51,21 @@ for each_moisturizer in moisturizers:
     
     time.sleep(2)
 
-    # Mapping the product name from product_name list with its respective price in product_price list
+    # Get product_details by mapping the product name from product_name list & price in product_price list
     product_details= list(zip(product_name_list, product_price_list))
     print("product_details:", product_details)
     print(type(product_details))
     time.sleep(3)
-
-    #product_price_list= [int(product_price) for product_price in range(len(product_price))]
-    for product_price in product_price_list:
-        for price in product_price:
-            print("price:", price)
-            price=int(price)
-            print("Type of price:", type(price))
-            # Iterating through the product_price to find the min-price of moisturizers
-            min_price=0
-            print("Type of min_price:", type(min_price))
-            #for price in product_price:
-            if int(price)<=int(min_price):
-                min_price = price
-                continue
-            print("min_price: ", min_price)
-                
-browser.quit()
-#for price in product price:
+  #Get min_price traversing through
+    min_price= product_price_list[0]
+    for product_price in range(0, len(product_price_list), 1):
+        min_price= min(min_price,product_price_list[product_price])
+        print(min_price)
+        print(type(min_price))
+        index= product_price_list.index(min_price)
+        print("index:", index)
+        print(product_name_list[index])
+        add_to_cart= browser.find_element_by_xpath("//button[contains(@onclick, 'addToCart')]").click()
+        print("clicked on Add button")
+        cart_items= browser.find_element_by_xpath("//button[contains(@class, 'thin-text nav-link')]").click()
+        
