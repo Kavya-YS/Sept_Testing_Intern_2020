@@ -1,7 +1,7 @@
 """
 Scope:
 1. Navigate the Moisturizers page
-2. Prepare the list of product names and product price seperately
+2. Prepare the list of product names and product price separately
 3. Merge the product names and their respective product price into product details
 4. Check the condition for min priced product
 5. Retrieve the product price, its index and product name from the list and print it
