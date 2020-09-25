@@ -30,6 +30,7 @@ moisturizers= browser.find_elements_by_xpath("//div[contains(@class, 'text-cente
 
 product_name_list= []
 product_price_list=[]
+sub_string_of_name= "Aloe"
 aloe_essence=[]
 
 for each_moisturizer in moisturizers:
@@ -54,14 +55,22 @@ print("product_details:", product_details)
     
 time.sleep(3)
 
-for product_name in product_name_list:
-    if product_name== "Aloe":
+#Get the list list of products containing Aloe essence
+for  product_name in product_name_list:
+    if sub_string_of_name in product_name:
         aloe_essence.append(product_name)
-    print("Aloe based moisturizers are:", aloe_essence)
+print("Aloe based moisturizers are:", aloe_essence)
+
+#Get the index of all Aloe based moisturizers from the product_name_list
+index_aloe_name= [product_name_list.index(item) for item in aloe_essence]
+print("index of aloe products in product_name_list is:", *index_aloe_name)
+index_aloe_price= product_price_list[index_aloe_name]
+print("index of Aloe products in product_price_list: ", index_aloe_price)
 
 
-  #Get min_price traversing through
-"""min_price= product_price_list[0]
+
+"""Get min_price traversing through
+min_price= product_price_list[0]
 for product_price in range(0, len(product_price_list), 1):
   min_price= min(min_price,product_price_list[product_price])
 print("Minimum priced product in the list:", min_price)
