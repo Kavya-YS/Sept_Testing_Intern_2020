@@ -32,6 +32,8 @@ product_name_list= []
 product_price_list=[]
 sub_string_of_name= "Aloe"
 aloe_essence=[]
+index_aloe_price=[]
+aloe_price=[]
 
 for each_moisturizer in moisturizers:
   #print(each_moisturizer.text)
@@ -63,18 +65,12 @@ print("Aloe based moisturizers are:", aloe_essence)
 
 #Get the index of all Aloe based moisturizers from the product_name_list
 index_aloe_name= [product_name_list.index(item) for item in aloe_essence]
-print("index of aloe products in product_name_list is:", *index_aloe_name)
-index_aloe_price= product_price_list[index_aloe_name]
-print("index of Aloe products in product_price_list: ", index_aloe_price)
+print("index_aloe_name:", index_aloe_name)
+index_aloe_price= index_aloe_price.insert(index_aloe_name)
+print("index_aloe_price:", index_aloe_price)
+"""for index in index_aloe_name:
+  for product_price in product_price_list:"""
+
+  
 
 
-
-"""Get min_price traversing through
-min_price= product_price_list[0]
-for product_price in range(0, len(product_price_list), 1):
-  min_price= min(min_price,product_price_list[product_price])
-print("Minimum priced product in the list:", min_price)
-index= product_price_list.index(min_price)
-print("Index of the minimum priced product:", index)
-print("Name of the minimum priced product:", product_name_list[index])
-add_to_cart= browser.find_element_by_xpath("//button[contains(@onclick, 'addToCart')]").click()"""

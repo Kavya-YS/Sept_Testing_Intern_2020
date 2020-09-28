@@ -58,8 +58,8 @@ driver.switch_to.window(window_javaTpoint)
 if window_javaTpoint_title == driver.title:
     print('Back to the 1st window javaTpoint')
     print(driver.title)
-print(quit)
-driver.quit()    
+#print(quit)
+driver.close()    
 
 
 
