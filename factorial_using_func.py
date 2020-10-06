@@ -1,4 +1,3 @@
-from selenium import webdriver
 import math
 
 def user_input():
