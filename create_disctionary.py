@@ -3,12 +3,12 @@ def user_input():
     return n
 
 
-
+this_dictionary={}
 def create_dictionary(n):
     "create a dictionary with keys:i, (i*i)"
-    for i in range(n):
-        this_dictionary= {"n": i, "n*n": i*i}
-        print(this_dictionary)
+    for i in range(1, n+1):
+        this_dictionary[i]= i*i
+    print(this_dictionary)
 
 
 
