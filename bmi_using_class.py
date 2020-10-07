@@ -25,7 +25,11 @@ class Bmi():
         else:
             print("I am obese")
 
-Bmi_object=Bmi()
-Bmi_object.bmi_input()
-Bmi_object.bmi_calc()
-Bmi_object.bmi_range()
+Bmi_object1=Bmi()
+Bmi_object1.bmi_input()
+Bmi_object1.bmi_calc()
+Bmi_object1.bmi_range()
+Bmi_object2=Bmi()
+Bmi_object2.bmi_input()
+Bmi_object2.bmi_calc()
+Bmi_object2.bmi_range()
